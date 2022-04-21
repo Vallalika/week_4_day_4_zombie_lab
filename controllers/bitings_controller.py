@@ -43,11 +43,14 @@ def edit_biting(id):
 # UPDATE
 @bitings_blueprint.route("/bitings/<id>", methods = ['POST'])
 def update_biting(id):
+
     human_id = request.form['human_id']
     human = human_repository.select(human_id)
     zombie_id = request.form['zombie_id']
     zombie = zombie_repository.select(zombie_id)
     biting = Biting(human, zombie, id)
+    print("HERE IS THE ID LALALALALALALA")
+    print(id)
 
     biting_repository.update(biting)
     return redirect('/bitings')

@@ -6,6 +6,7 @@
 {% for biting in bitings %}
 
 <section>
+    Biting ID: {{biting.id}}
     <p>{{ biting.zombie.name }} bit {{ biting.human.name }}</p>
     <a href="/bitings/{{ biting.id }}/edit">Edit</a>
     <form action="/bitings/{{ biting.id }}/delete" method="POST">
